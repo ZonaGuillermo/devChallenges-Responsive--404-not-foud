@@ -3,56 +3,88 @@
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	color: var(--primary-color);
+}
+
+:root {
+	--primary-color: #333;
+	--secondary-color: #BDBDBD;
+	--height-header: 50px;
+	--height-footer: 30px;
+	--vertical-margin: 3.75rem;
 }
 
 header {
-	grid-column: 1 / 3;
 	font-family: 'Inconsolata', monospace;
-	background-color: tomato;
+	height: var(--height-header);
+	margin-bottom: var(--vertical-margin);
+	padding-left: 2rem;
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.5625rem;
+	letter-spacing: -0.08em;
+	text-transform: uppercase;
 }
 
 section {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	/* grid-template-rows: 3fr; */
-	/* grid-auto-columns: 1fr; */
-	grid-auto-flow: row;
 	justify-content: space-evenly;
 	align-items: center;
 	column-gap: 1rem;
+	min-height: calc(100vh - var(--height-header) - var(--height-footer));
+	padding: 0 1.5rem;
+	font-family: 'Space Mono', monospace;
 }
 
-footer {
-	grid-column: 1 / 3;
+div {
+	margin: var(--vertical-margin) auto;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: clamp(3rem, 1.615rem + 3.85vw, 4rem);
+	line-height: clamp(4.438rem, 2.361rem + 5.77vw, 5.938rem);
+	letter-spacing: -0.035em;
+}
+
+p {
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	font-weight: 400;
+	font-size: clamp(1rem, 0.308rem + 1.92vw, 1.5rem);
+	line-height: clamp(1.625rem, 0.846rem + 2.16vw, 2.188rem);
+	letter-spacing: -0.035em;
+}
+
+footer, footer a {
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
-	background-color: darkseagreen;
-}
-
-.left {
-	place-self: center;
+	color: var(--secondary-color);
+	height: var(--height-footer);
+	margin-top: 7rem;
 }
 
 .left img {
-	width: 100%;
-}
-
-.right {
-	font-family: 'Space Mono', monospace;
+	width: min(540px, 100%);
+	height: auto;
 }
 
 .btnBack {
 	border: none;
-	margin-top: 4rem;
 	padding: 1rem 2.5rem;
-	background-color: #333;
+	background-color: var(--primary-color);
 	color: #fff;
 	font-family: 'Space Mono';
-	font-style: normal;
 	font-weight: 700;
-	font-size: 14px;
-	line-height: 21px;
+	font-size: 0.875rem;
+	line-height: 1.3125rem;
 	letter-spacing: -0.035em;
 	text-transform: uppercase;
 }
 
+.red {
+	color: red;
+}
